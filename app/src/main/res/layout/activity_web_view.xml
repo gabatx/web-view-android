@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".WebViewActivity">
+
+    <TextView
+            android:id="@+id/barraSuperior"
+            android:text=""
+            android:background="@color/gris_oscuro"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <WebView
+            android:id="@+id/webViewMainActivity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barraSuperior"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintBottom_toTopOf="@+id/barraInferior">
+
+    </WebView>
+
+    <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barraSuperior"
+            android:indeterminate="false"
+            android:theme="@style/Theme.EjercicioWebView.blancoBarra"/>
+
+    <TextView
+            android:text=""
+            android:background="@color/gris_oscuro"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:id="@+id/barraInferior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+            android:background="@drawable/icono_cerrar_24"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:backgroundTint="@color/blanco_roto"
+            android:layout_marginStart="15dp"
+            android:id="@+id/botonCerrar"
+            app:layout_constraintBottom_toTopOf="@+id/progressBar"
+            app:layout_constraintTop_toTopOf="@+id/barraSuperior"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+            android:text="..."
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blanco_roto"
+            android:id="@+id/contentTitulo"
+            app:layout_constraintTop_toTopOf="@+id/barraSuperior"
+            app:layout_constraintBottom_toTopOf="@+id/progressBar"
+            app:layout_constraintEnd_toStartOf="@+id/flechaPosterior"
+            app:layout_constraintStart_toEndOf="@+id/flechaAnterior"
+            android:lines="2"
+            android:ellipsize="end"
+            android:gravity="center" />
+
+    <TextView
+            android:background="@drawable/icono_flecha_anterior_24"
+            android:clickable="true"
+            android:backgroundTint="@color/blanco_roto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/flechaAnterior"
+            android:layout_marginStart="40dp"
+            app:layout_constraintStart_toEndOf="@+id/botonCerrar"
+            app:layout_constraintBottom_toTopOf="@+id/progressBar"
+            app:layout_constraintTop_toTopOf="@+id/barraSuperior"
+            android:focusable="true"
+            android:textAlignment="center" />
+
+    <TextView
+            android:background="@drawable/icono_flecha_posterior_24"
+            android:backgroundTint="@color/blanco_roto"
+            android:clickable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/flechaPosterior"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintEnd_toStartOf="@+id/botonPararCarga"
+            app:layout_constraintBottom_toTopOf="@+id/progressBar"
+            app:layout_constraintTop_toTopOf="@+id/barraSuperior"
+            android:focusable="true"
+            android:textAlignment="center" />
+
+    <TextView
+            android:id="@+id/botonPararCarga"
+            android:background="@drawable/icono_cerrar_24"
+            android:visibility="invisible"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:backgroundTint="@color/blanco_roto"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintEnd_toEndOf="@+id/barraSuperior"
+            app:layout_constraintBottom_toTopOf="@+id/progressBar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+            android:background="@drawable/icono_recargar_24"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:backgroundTint="@color/blanco_roto"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintEnd_toEndOf="@+id/barraSuperior"
+            app:layout_constraintBottom_toTopOf="@+id/progressBar"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/botonRecargar" />
+
+    <TextView
+            android:layout_marginRight="15dp"
+            android:background="@drawable/icono_abrir_navegador"
+            android:scaleX="-1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/botonAbrirNavegador"
+            app:layout_constraintBottom_toBottomOf="@+id/barraInferior"
+            app:layout_constraintTop_toBottomOf="@+id/webViewMainActivity"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
